@@ -1,16 +1,122 @@
 @import 'compass/css3';
 @import 'partials/colors';
-@import 'partials/base';
 @import 'partials/buttons';
 
-#left {
-  float: left;
-  width: 600px;
+* {
+  -moz-box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
-#right {
-  width: 460px;
-  float: right;
+body {
+  @include bg;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,sans-serif;
+  text-rendering: optimizelegibility;
+  color: $txt;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.button {
+  line-height: 23px;
+  font-size: 15px;
+}
+
+p {
+  margin: 25px 0; 
+}
+
+.details p {
+  margin-top: 0px;
+}
+
+
+h1 {
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 69px;
+}
+
+.small {
+  font-size: 12px; 
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dotted #CCC;
+  margin: 23px 0; 
+}
+
+a, .as-link {
+  text-decoration: none;
+  color: $lnk;
+  line-height: 1.4em;
+  display: inline-block;
+  vertical-align: baseline;
+  zoom: 1;
+  *display: inline;
+  *vertical-align: auto;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s; 
+}
+
+a:hover, .as-link:hover {
+  color: $lnk_hover;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+}
+
+header 
+{
+  background: $header_bg;
+  width: 100%;
+  position: relative; 
+  color: $header_txt;
+  text-align: center;
+  border-bottom: 1px solid $header_line;
+  padding-bottom: 40px;
+
+  h1 {
+    color: $header_heading;
+    line-height: 46px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 2.5;
+  }
+
+  em, a {
+    color: $header_em;
+    font-style: normal;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $header_txt;
+  }
+}
+
+header:before, header:after {
+  content: " ";
+  display: table; 
+}
+
+header:after {
+  clear: both; 
+}
+
+.wrap {
+  width: 90%;
+  max-width: 990px;
+  margin: 20px auto 20px;
 }
 
 .button sup {
@@ -25,66 +131,52 @@
   font-size: 10px;
 }
 
-#container {
-  *zoom: 1;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 1060px;
-  margin: 0 auto;
-  position: relative; 
+.cover {
+  margin: -75px auto 0 -50px;
+  position: relative;
+  float: left;
+  width: 446px;
 }
 
-@media (max-width: 1060px) 
+.details {
+  width: 550px;
+  float: left;
+}
+
+.why 
 {
-  .calls-to-action 
-  {
-    float: left;
-    
-    .buttons {
-      width: 100%;
-    }
+  width: 100%;
+  float: left;
 
-    .button {
-      float: left;
-    }
+  h1 {
+    margin-top: -12px;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 990px) 
+{
+
+  header h1 {
+    line-height: 68px;
   }
 
-  #container {
-    width: 80%;
-    margin: 20px auto 20px;
-  }
-
-  #right, #left {
-    float: left;
+  .details, .cover, .buttons {
+    float: none;
     width: 100%;
-    margin-left: 30px;
   }
 
   .cover {
-    position: relative;
-    margin-left: -30px;
+    width: 446px;
+    margin: -75px auto 0 auto;
   }
 
-  #right {
-    clear: both;
+  .buttons {
+    text-align: center;
   }
-}
 
-#container:before, #container:after {
-  content: " ";
-  display: table; 
-}
-
-#container:after {
-  clear: both; 
-}
-
-footer {
-  margin-top: 20px;
-  text-align: left;
-}
-
-footer a {
-  color: $lnk_footer;
+  .price { 
+    display: none;
+  }
 }
